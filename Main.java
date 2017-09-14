@@ -23,8 +23,10 @@ public class Main {
 	/*
 	 * Un palíndromo es una expresión que lees igual de izquierda a derecha 
 	 * que de derecha a izquierda: Abccba, La ruta natural.
-	 * Dada una cadena de caracteres, crea una función en el lenguaje 
-	 * que quieras que detecte si es o no es un palíndromo. 
+	 * Dada una cadena de caracteres:
+	 * 1. eliminamos los espacios
+	 * 2. calculamos la longitud de la cadena sin blancos
+	 * 3. comprobamos si es palindromo
 	 */
 	static boolean palindromo(String s){
 		
@@ -40,7 +42,7 @@ public class Main {
 			cb = 0;
 			
 			l= cadena.length();
-			//eliminamos los espacios
+			
 			for(i= 0; i<l; i++){
 				if (cadena.charAt(i)!=' ')
 					sinblancos += cadena.charAt(i); 
@@ -48,9 +50,8 @@ public class Main {
 					cb++;
 			}
 			
-			l= l - cb;//calculamos la longitud de la cadena sin blancos
-			
-			//comprobamos si es palindromo
+			l= l - cb;
+						
 			for (i = 0; i<l/2; i++){
 				System.out.println("Compara: "+sinblancos.charAt(i)+" "+sinblancos.charAt(l-1-i));
 				if (sinblancos.charAt(i)!=sinblancos.charAt(l-1-i))
